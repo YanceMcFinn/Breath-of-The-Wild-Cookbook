@@ -20,8 +20,9 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className='row'>
-        {materials.map((item)=>(<h1>item.name</h1>
-        ))}
+        {materials.map((material)=>{
+          return (<h1>material.name</h1>)
+        })}
       </div>
     </main>
   )
