@@ -6,8 +6,8 @@ export function Card(props: { imgUrl: string, name: string, effect: string, desc
             <div className="px-2">
                 <h5 className="font-bold w-100 hyliaFont text-xl">{props.name}</h5>
                 <div className="text-left">
-                    <p><span className="font-bold w-100 hyliaFont">Cooking Effect: </span>{props.effect != '' ? props.effect : "none"}</p>
-                    <p><span className="font-bold w-100 hyliaFont">Description: </span>{props.description}</p>
+                    <p><span class="font-bold w-100 hyliaFont">Cooking Effect: </span>{props.effect != '' ? props.effect : "none"}</p>
+                    <p><span class="font-bold w-100 hyliaFont">Description: </span>{props.description}</p>
                 </div>
             </div>
         </div>
