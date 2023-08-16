@@ -7,9 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {},
       colors: {
         'zelda-green': '#0d9263',
-        'sheikah-slate-blue' : '#5afdfa'
+        'sheikah-slate-blue' : '#5afdfa',
+        'sheikah-slate-bg': '#36433a'
       },
     },
   },

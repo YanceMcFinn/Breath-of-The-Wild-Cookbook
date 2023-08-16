@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       colors: {
         'zelda-green': '#0d9263',
-        'sheikah-slate-blue' : '#5afdfa'
+        'sheikah-slate-blue' : '#5afdfa',
+        'sheikah-slate-bg': '#252926'
       },
     },
   },

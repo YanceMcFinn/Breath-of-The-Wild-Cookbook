@@ -27,7 +27,7 @@ body {
 }
 
 .card-bg {
-  background-color: rgba(255,255,255,.25);
+  background-color: #bcffe8;
 }
 
 .hyliaFont {
@@ -50,8 +50,8 @@ font-style:normal;
   border: 1px solid rgb(90,253,250)
 }
 
-.search-bar-input:focus {
-  background-color: rgba(255,255,255,.25) !important;
-  box-shadow: 0px 0px 10px rgba(90, 253, 250, .5) !important;
-  border: 1px solid rgb(90,253,250) !important;
+.search-bar-input:active {
+  background-color: rgba(255,255,255,.25);
+  box-shadow: 0px 0px 10px rgba(90, 253, 250, .5);
+  border: 1px solid rgb(90,253,250)
 }

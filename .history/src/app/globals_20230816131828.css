@@ -18,7 +18,12 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-image: url('https://i.imgflip.com/6df4ka.jpg');
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 .card-img {
@@ -27,31 +32,11 @@ body {
 }
 
 .card-bg {
-  background-color: rgba(255,255,255,.25);
+  background-color: #bcffe8;
 }
 
 .hyliaFont {
   font-family: 'hylia_serif_betaregular';
   font-weight:normal;
 font-style:normal;
-}
-
-.main-title {
-  font-size: 3em;
-}
-
-.glow {
-  text-shadow: 0px 0px 10px rgba(90, 253, 250, .5);
-}
-
-.search-bar-input {
-  background-color: rgba(255,255,255,.25);
-  box-shadow: 0px 0px 10px rgba(90, 253, 250, .5);
-  border: 1px solid rgb(90,253,250)
-}
-
-.search-bar-input:focus {
-  background-color: rgba(255,255,255,.25) !important;
-  box-shadow: 0px 0px 10px rgba(90, 253, 250, .5) !important;
-  border: 1px solid rgb(90,253,250) !important;
 }

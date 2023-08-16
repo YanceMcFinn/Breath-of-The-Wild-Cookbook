@@ -42,18 +42,15 @@ const handleChange = (e) => {
       <div className='text-center'>
         <h1 className='hyliaFont main-title text-sheikah-slate-blue my-5 glow'>Breath of The Wild Cookbook</h1>
         <div className='my-3 mx-2 text-center w-full'>
-          <p className='hyliaFont text-xl text-sheikah-slate-blue glow inline-block mr-2'>Search </p><input value={searchFilter} onChange={handleChange} className='rounded w-1/2 search-bar-input text-sheikah-slate-blue glow' type='text'></input>
+          <p className='hyliaFont text-xl text-sheikah-slate-blue glow inline-block mr-2'>Search </p><input value={searchFilter} onChange={handleChange} className='rounded w-1/2 search-bar-input' type='text'></input>
         </div>
       </div>
-      <div className='px-5 mb-2'>
+      <div className='px-5'>
         <div className='grid grid-cols-3 gap-5 px-5'>
           {materials?.map((item)=>{
             return <Card name={item.name} imgUrl={item.image} effect = {item.cooking_effect} description = {item.description} />
           })}
         </div>
-      </div>
-      <div className='mb-2'>
-        <p className='text-center text-xl hyliaFont glow text-sheikah-slate-blue my-5'>Made by <a href="https://github.com/yancemcfinn">Sean Cole</a></p>
       </div>
     </main>
   )

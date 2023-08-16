@@ -52,8 +52,8 @@ const handleChange = (e) => {
           })}
         </div>
       </div>
-      <div className='mb-2'>
-        <p className='text-center text-xl hyliaFont glow text-sheikah-slate-blue my-5'>Made by <a href="https://github.com/yancemcfinn">Sean Cole</a></p>
+      <div>
+        <p className='text-xl hyliaFont glow text-sheikah-slate-blue'
       </div>
     </main>
   )
