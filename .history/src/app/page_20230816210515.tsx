@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image'
 import { Card } from './components/Card'
 import '../../HyliaSerif_WebfontKit/stylesheet.css'
+import BOTWImgComingSoon from '../../public/BOTWCookBook_ImgComingSoon.png'
 
 export default function Home() {
   const [materials, setMaterials] = useState([] as any[]);
@@ -52,6 +53,7 @@ const handleChange = (e : any) => {
     <main>
       <div className='text-center'>
         <h1 className='hyliaFont main-title text-sheikah-slate-blue my-5 glow'>Breath of The Wild Cookbook</h1>
+        <img src={BOTWImgComingSoon}></img>
       <div className="inline-flex card-bg rounded-md shadow-sm" role="group">
         <button type="button" onClick={()=>setGameMode('botw')} className={'px-4 py-2 text-sm font-medium hyliaFont text-sheikah-slate-blue glow border border-sheikah-slate-blue rounded-l-lg' + " " + botwSelected}>
           Breath of The Wild
@@ -68,7 +70,7 @@ const handleChange = (e : any) => {
       <div className='px-5 mb-2 mx-auto md:w-9/12 sm:w-full'>
       {materials.length != 0 ? <div className='grid md:grid-cols-3 gap-5 justify-center'>
           {materials?.map((item: { name: string, image: string, cooking_effect: string, description: string })=>{
-            return <Card name={item.name} imgUrl={gameMode == 'botw' ? item.image : '/BOTWCookBook_ImgComingSoon.png'} effect = {item.cooking_effect} description = {item.description} />
+            return <Card name={item.name} imgUrl={gameMode != 'totk' ? item.image : BOTWImgComingSoon} effect = {item.cooking_effect} description = {item.description} />
           })}</div> : <div className='text-center'><h2 className='text-sheikah-slate-blue glow hyliaFont text-center'>no search results found</h2></div>}
         
       </div>

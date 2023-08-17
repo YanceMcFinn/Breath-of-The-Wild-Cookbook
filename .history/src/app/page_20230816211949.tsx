@@ -68,7 +68,7 @@ const handleChange = (e : any) => {
       <div className='px-5 mb-2 mx-auto md:w-9/12 sm:w-full'>
       {materials.length != 0 ? <div className='grid md:grid-cols-3 gap-5 justify-center'>
           {materials?.map((item: { name: string, image: string, cooking_effect: string, description: string })=>{
-            return <Card name={item.name} imgUrl={gameMode == 'botw' ? item.image : '/BOTWCookBook_ImgComingSoon.png'} effect = {item.cooking_effect} description = {item.description} />
+            return <Card name={item.name} imgUrl={gameMode != 'totk' ? item.image : '/BOTWCookBook_ImgComingSoon.png'} effect = {item.cooking_effect} description = {item.description} />
           })}</div> : <div className='text-center'><h2 className='text-sheikah-slate-blue glow hyliaFont text-center'>no search results found</h2></div>}
         
       </div>

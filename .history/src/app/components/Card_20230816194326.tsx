@@ -1,9 +1,7 @@
-import { StaticImageData } from "next/image";
-
 export function Card(props: { imgUrl: string, name: string, effect: string, description: string }){
     return(
-        <div className="card-bg aspect-auto !px-0 pt-0 border-solid border-sheikah-slate-blue text-sheikah-slate-blue glow border-2 block rounded-md inline-block space-y-1 space-x-1 p-2 text-center">
-            <img className="card-img rounded-t p-0 m-0 w-full position-top" src={props.imgUrl}></img>
+        <div className="card-bg justify-center w-80 aspect-auto !px-0 pt-0 border-solid border-sheikah-slate-blue text-sheikah-slate-blue glow border-2 block rounded-md inline-block space-y-1 space-x-1 p-2 text-center">
+            <img className="card-img p-0 m-0 w-full position-top" src={props.imgUrl}></img>
             
             <div className="px-2">
                 <h5 className="font-bold w-100 hyliaFont text-xl">{props.name}</h5>

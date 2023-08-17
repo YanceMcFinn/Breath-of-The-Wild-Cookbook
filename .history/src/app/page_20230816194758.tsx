@@ -48,10 +48,12 @@ const handleChange = (e : any) => {
   
   }
 
+
   return (
     <main>
       <div className='text-center'>
         <h1 className='hyliaFont main-title text-sheikah-slate-blue my-5 glow'>Breath of The Wild Cookbook</h1>
+
       <div className="inline-flex card-bg rounded-md shadow-sm" role="group">
         <button type="button" onClick={()=>setGameMode('botw')} className={'px-4 py-2 text-sm font-medium hyliaFont text-sheikah-slate-blue glow border border-sheikah-slate-blue rounded-l-lg' + " " + botwSelected}>
           Breath of The Wild
@@ -65,10 +67,10 @@ const handleChange = (e : any) => {
           <p className='hyliaFont text-xl text-sheikah-slate-blue glow inline-block mr-2'>Search </p><input value={searchFilter} onChange={handleChange} className='rounded w-1/2 search-bar-input text-sheikah-slate-blue glow' type='text'></input>
         </div>
       </div>
-      <div className='px-5 mb-2 mx-auto md:w-9/12 sm:w-full'>
+      <div className=' mb-2 w-9/12'>
       {materials.length != 0 ? <div className='grid md:grid-cols-3 gap-5 justify-center'>
           {materials?.map((item: { name: string, image: string, cooking_effect: string, description: string })=>{
-            return <Card name={item.name} imgUrl={gameMode == 'botw' ? item.image : '/BOTWCookBook_ImgComingSoon.png'} effect = {item.cooking_effect} description = {item.description} />
+            return <Card name={item.name} imgUrl={item.image} effect = {item.cooking_effect} description = {item.description} />
           })}</div> : <div className='text-center'><h2 className='text-sheikah-slate-blue glow hyliaFont text-center'>no search results found</h2></div>}
         
       </div>
