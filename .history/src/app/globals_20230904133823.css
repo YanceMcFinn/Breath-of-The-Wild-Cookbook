@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-image: url('https://i.imgflip.com/6df4ka.jpg');
+  background-attachment: fixed;
+}
+
+.card-img {
+  height: auto;
+  object-fit: cover;
+}
+
+.card-bg {
+  background-color: rgba(255,255,255,.25);
+}
+
+.hyliaFont {
+  font-family: 'hylia_serif_betaregular';
+  font-weight:normal;
+font-style:normal;
+}
+
+.main-title {
+  font-size: 3em;
+}
+
+.glow {
+  filter: drop-shadow(0px 0px 10px rgba(90, 253, 250, .5));
+}
+
+.heart {
+  height: 20px;
+  filter: drop-shadow(0px 0px 10px rgba(90, 253, 250, .5));
+}
+
+.search-bar-input {
+  background-color: rgba(255,255,255,.25);
+  box-shadow: 0px 0px 10px rgba(90, 253, 250, .5);
+  border: 1px solid rgb(90,253,250)
+}
+
+.search-bar-input:focus {
+  background-color: rgba(255,255,255,.25) !important;
+  box-shadow: 0px 0px 10px rgba(90, 253, 250, .5) !important;
+  border: 1px solid rgb(90,253,250) !important;
+}
+
+.selected {
+  background-color: rgba(90,253,250,.5)
+}

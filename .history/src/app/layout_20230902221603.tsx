@@ -1,0 +1,24 @@
+import './globals.css'
+import '../../HyliaSerif_WebfontKit/stylesheet.css'
+import { Inter } from 'next/font/google'
+import { faHeart } from '@fortawesome/pro-solid-svg-icons'
+
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'Breath of The Wild Cookbook',
+  description: 'search,store, and favorite your favorite recipes from BOTW',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  )
+}
