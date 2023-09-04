@@ -20,7 +20,8 @@ export async function generateStaticParams() {
     return material.data
   }
 
-  export default async function Material ({ params }: { params: { name: string } }){
+  export default async function Material ({ params }){
+    
     const material = await getMaterial(params)
     // console.log(material)
     const heartsRestored = () => {
