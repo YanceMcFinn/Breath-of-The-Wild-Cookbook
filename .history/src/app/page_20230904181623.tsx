@@ -13,22 +13,22 @@ export default function Home() {
   const [fullMaterialList, setFullMaterialList] = useState([] as any[]);
   const [searchFilter, setSearchFilter] = useState([] as any[]);
   const [gameMode, setGameMode] = useState('botw')
-  
+ 
+    
   async function loadMaterials() {
     const materials_resp = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/category/materials?game=${gameMode}`);
-    const materials = await materials_resp.json();
+    const materialsData= await materials_resp.json();
+    const materials = materialsData.data;
     console.log(materials)
     const creatures_resp = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/category/creatures?game=${gameMode}`)
-    const creatures= await creatures_resp.json()
-    // const creatures = await creaturesData.data
-    const onlyEdibles = creatures.data.filter((creature: {edible: boolean}) =>{
+    const creatures = await creatures_resp.json()
+    const onlyEdibles = creatures.data.filter((creature : {edible: boolean})=>{
       return creature.edible;
     })
-    // console.log(onlyEdibles)
-    setMaterials(materials.data.concat(onlyEdibles))
-    setFullMaterialList(materials.data.concat(onlyEdibles))
-    console.log(fullMaterialList)
+    setMaterials(materials + onlyEdibles)
+    setFullMaterialList(materials + onlyEdibles)
   }
+
   useEffect(()=>{
     loadMaterials();
 },[gameMode]);
@@ -78,7 +78,7 @@ const handleChange = (e : any) => {
       </div>
       <div className='px-5 mb-2 mx-auto md:w-9/12 sm:w-full'>
       {materials.length != 0 ? <div className='grid md:grid-cols-3 gap-5 justify-center'>
-          {materials?.map((item: { name: string, image: string, cooking_effect: string, description: string, hearts_recovered: number, id: number})=>{
+          {materials.map((item: { name: string, image: string, cooking_effect: string, description: string, hearts_recovered: number, id: number})=>{
             return <Card key={item.id} name={item.name} imgUrl={gameMode == 'botw' ? item.image : '/BOTWCookBook_ImgComingSoon.png'} effect = {item.cooking_effect} hearts={item.hearts_recovered} description = {item.description} gameMode={gameMode} />
           })}</div> : <div className='text-center'><h2 className='text-sheikah-slate-blue-500 glow hyliaFont text-center'>no search results found</h2></div>}
         

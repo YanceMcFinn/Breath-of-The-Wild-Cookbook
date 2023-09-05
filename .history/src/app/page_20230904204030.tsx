@@ -24,7 +24,7 @@ export default function Home() {
     const onlyEdibles = creatures.data.filter((creature: {edible: boolean}) =>{
       return creature.edible;
     })
-    // console.log(onlyEdibles)
+    console.log(onlyEdibles)
     setMaterials(materials.data.concat(onlyEdibles))
     setFullMaterialList(materials.data.concat(onlyEdibles))
     console.log(fullMaterialList)

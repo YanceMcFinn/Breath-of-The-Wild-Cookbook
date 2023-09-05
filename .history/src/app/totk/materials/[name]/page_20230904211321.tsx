@@ -42,7 +42,7 @@ export async function generateStaticParams() {
         <div id='left-col' className="md:w-30 w-full">
           <img className='w-full object-cover p-0 rounded-l-lg' src='/BOTWCookBook_ImgComingSoon.png'></img>
         </div>
-        <div id='right-col' className='md:w-70 w-full px-3 py-2'>
+        <div id='right-col' className='md:w-70 w-full px-3'>
           <h1 className="leading-10 text-center main-title hyliaFont mb-2">{material.name}</h1>
           <div className="w-full flex justify-center space-x-1 mt-4 mb-2">
           {heartsRestored().map((heart)=>{

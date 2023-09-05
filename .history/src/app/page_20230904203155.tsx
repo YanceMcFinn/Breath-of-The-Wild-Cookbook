@@ -19,16 +19,17 @@ export default function Home() {
     const materials = await materials_resp.json();
     console.log(materials)
     const creatures_resp = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/category/creatures?game=${gameMode}`)
-    const creatures= await creatures_resp.json()
-    // const creatures = await creaturesData.data
-    const onlyEdibles = creatures.data.filter((creature: {edible: boolean}) =>{
+    const creaturesData = await creatures_resp.json()
+    const creatures = await creaturesData.data
+    const onlyEdibles = creatures.filter((creature: {edible: boolean}) =>{
       return creature.edible;
     })
-    // console.log(onlyEdibles)
-    setMaterials(materials.data.concat(onlyEdibles))
-    setFullMaterialList(materials.data.concat(onlyEdibles))
+    console.log(onlyEdibles)
+    setMaterials(materials.data + loadCreatures())
+    setFullMaterialList(materials.data + loadCreatures())
     console.log(fullMaterialList)
   }
+
   useEffect(()=>{
     loadMaterials();
 },[gameMode]);
